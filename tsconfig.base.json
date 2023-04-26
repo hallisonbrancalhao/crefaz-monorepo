@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@crefaz-monorepo/client/auth": ["libs/client/auth/src/index.ts"],
       "@crefaz-monorepo/server/auth": ["libs/server/auth/src/index.ts"]
     }
   },
