@@ -1,7 +1,6 @@
 import {
   Http,
   HttpImpl,
-  MockRepositoryImpl,
   Product,
   ProductFacade,
   ProductRepository,
@@ -34,12 +33,4 @@ Di.add(ProductRepository, ProductRepositoryImpl, [
   PRODUCT_ENDPOINT_TOKEN,
 ]);
 
-// Di.add(ProductRepository, MockRepositoryImpl, [PRODUCT_MOCKS_TOKEN]);
 Di.add(ProductFacade, ProductFacade, [ProductRepository]);
-const repo = Di.use(ProductRepository);
-// console.log(repo);
-
-// repo.findAll().subscribe(console.log);
-// // repo.create({ name: 'Gui' }).subscribe(console.log)
-// repo.findById(1).subscribe(console.log);
-// repo.findBy('name', 'Gui 1').subscribe(console.log);
