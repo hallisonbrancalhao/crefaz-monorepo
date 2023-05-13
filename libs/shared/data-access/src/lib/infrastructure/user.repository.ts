@@ -1,4 +1,6 @@
-import {Repository} from '../base'
-import {User} from '../entities'
+import { UserSession } from '../entities';
+import { Observable } from 'rxjs';
 
-export abstract class UserRepository extends Repository<User> {}
+export abstract class UserRepository {
+  abstract getUser(): Observable<UserSession>;
+}

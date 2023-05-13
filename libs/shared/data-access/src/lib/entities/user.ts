@@ -1,12 +1,7 @@
-export interface User {
-  id: number;
-  name: string;
-}
-
 export interface UserSession {
   token: string;
   expires: number;
-  models: Array<Models>;
+  models: Models[];
 }
 
 export interface Models {

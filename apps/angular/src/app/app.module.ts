@@ -12,6 +12,14 @@ import { CoupensComponent } from './coupens/coupens.component';
 import { PagesComponent } from './pages/pages.component';
 import { SettingsComponent } from './settings/settings.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {
+  Http,
+  HttpImpl,
+  UserFacade,
+  UserFacadeImpl,
+  UserRepository,
+  UserRepositoryImpl,
+} from '@crefaz-monorepo/shared/data-access';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,31 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
+  providers: [
+    {
+      provide: 'url.api',
+      useValue: '/api',
+    },
+    {
+      provide: 'url.users',
+      useValue: 'users',
+    },
+    {
+      provide: Http,
+      useClass: HttpImpl,
+      deps: ['url.api'],
+    },
+    {
+      provide: UserRepository,
+      useClass: UserRepositoryImpl,
+      deps: [Http, 'url.users'],
+    },
+    {
+      provide: UserFacade,
+      useClass: UserFacadeImpl,
+      deps: [UserRepository],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

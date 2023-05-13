@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UserSession } from '@crefaz-monorepo/shared/data-access';
+import { UpdateProductDto } from './products/dto/update-product.dto';
 
 @Injectable()
 export class AppService {
@@ -9,14 +10,14 @@ export class AppService {
 
   getSession(): UserSession {
     const data: UserSession = {
-      token: 'ASDFKLASDG1568DG69846846AE8V4WE849',
+      token: 'JWT',
       expires: Date.now(),
       models: [
         {
           route: 'dashboard',
           icon: 'fal fa-home',
           label: 'Dashboard',
-          permission: 3,
+          permission: 1,
         },
         {
           route: 'statistics',

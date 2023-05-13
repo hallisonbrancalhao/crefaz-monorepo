@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { navData } from './nav.data';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { UserFacade } from '@crefaz-monorepo/shared/data-access';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -25,6 +26,11 @@ interface SideNavToggle {
   ],
 })
 export class SidenavComponent {
+  constructor(readonly userFacade: UserFacade) {
+    userFacade.loadUsers();
+    console.log('SidenavComponent ', userFacade);
+  }
+
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
