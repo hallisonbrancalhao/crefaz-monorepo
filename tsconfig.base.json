@@ -16,7 +16,14 @@
     "baseUrl": ".",
     "paths": {
       "@crefaz-monorepo/client/auth": ["libs/client/auth/src/index.ts"],
-      "@crefaz-monorepo/server/auth": ["libs/server/auth/src/index.ts"]
+      "@crefaz-monorepo/server/auth": ["libs/server/auth/src/index.ts"],
+      "@crefaz-monorepo/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
+      ],
+      "@crefaz-monorepo/shared/ui-layout": [
+        "libs/shared/ui-layout/src/index.ts"
+      ],
+      "@crefaz-monorepo/shared/util-di": ["libs/shared/util-di/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
