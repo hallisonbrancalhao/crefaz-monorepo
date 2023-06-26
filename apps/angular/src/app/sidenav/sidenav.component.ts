@@ -28,7 +28,6 @@ interface SideNavToggle {
 export class SidenavComponent {
   constructor(readonly userFacade: UserFacade) {
     userFacade.loadUsers();
-    console.log('SidenavComponent ', userFacade);
   }
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();

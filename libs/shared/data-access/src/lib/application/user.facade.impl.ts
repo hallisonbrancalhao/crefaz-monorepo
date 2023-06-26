@@ -1,7 +1,7 @@
 import { Store } from '../base';
+import { UserFacade } from './user.facade';
 import { UserSession } from '../entities';
 import { UserRepository } from '../infrastructure';
-import { UserFacade } from './user.facade';
 
 export interface UserState {
   user: UserSession | null;

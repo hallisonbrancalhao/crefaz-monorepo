@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { UserSession } from '@crefaz-monorepo/shared/data-access';
-import { UpdateProductDto } from './products/dto/update-product.dto';
 
 @Injectable()
 export class AppService {
@@ -9,6 +8,10 @@ export class AppService {
   }
 
   getSession(): UserSession {
+    //TODO: Api connection
+
+    //TODO: Error exceptions
+
     const data: UserSession = {
       token: 'JWT',
       expires: Date.now(),
